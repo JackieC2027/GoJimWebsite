@@ -1,0 +1,6 @@
+Jackie Cheng is a first-year student at Drexel Univeristy, where he is studying in Computer
+Science (BS). He is eagar to apply his vast knowledge of computing principles and advanced
+technical knowledge to develop passion-driven and impactful software. Some of his projects include
+customized and interactable websites for local businesses, a file-type converter, a smart item
+tracking application. Currently, he is working on a fitness-tracking application to make gym 
+resources more accessible and affordable.
