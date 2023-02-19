@@ -30,6 +30,7 @@ if(isset($_POST["submit"])){
   <head>
     <meta charset="utf-8">
     <title>GoJim</title>
+    <link rel="stylesheet" href="createAccount.css">
   </head>
   <body>
     <h2>Create An Account</h2>
