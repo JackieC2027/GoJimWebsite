@@ -1,8 +1,5 @@
 <?php
 require 'config.php';
-if(!empty($_SESSION["id"])){
-  header("Location: index.php");
-}
 if(isset($_POST["submit"])){
   $name = $_POST["name"];
   $username = $_POST["username"];
@@ -19,7 +16,7 @@ if(isset($_POST["submit"])){
       $query = "INSERT INTO login_user VALUES('','$name','$username','$email','$password')";
       mysqli_query($conn, $query);
       echo
-      "<script> alert('Registration Successful'); </script>";
+      "<script> window.location.replace('login.php'); </script>";
     }
     else{
       echo
@@ -33,7 +30,6 @@ if(isset($_POST["submit"])){
   <head>
     <meta charset="utf-8">
     <title>GoJim</title>
-    <link rel="stylesheet" href="createAccount.css">
   </head>
   <body>
     <h2>Create An Account</h2>
