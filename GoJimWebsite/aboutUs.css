@@ -3,13 +3,6 @@
     padding: 0;
 }
 
-nav {
-  background-color: #474c57;
-  width: 60%;
-  margin: 0 auto;
-  padding: 0px 0;
-}
-
 nav ul {
   list-style: none;
   margin: 0;
@@ -61,22 +54,15 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-.logo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  float: left;
-  margin-left: 20px;
-}
-
-h1, h2 {
+h1, h2, li {
     color:white;
     text-align: center;
 }
 
-p {
+p, li {
     color: white;
     font-size: 18px;
+    list-style-type: none;
 }
 
 .item .image-container:hover .description {
