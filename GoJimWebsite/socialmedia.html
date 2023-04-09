@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Users Search</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+  </head>
+  <body>
+    <h1>Meet other gymgoers!</h1>
+    <input type="text" id="searchUser" name="searchforusers">
+    <button type="button"id="search" name="search">Search</button>
+    
+    <ul id="users"></ul>
+    </body>
+</html>
+<script type="module">
+    import {initializeApp} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+    import {getDatabase, ref, onValue} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+    const firebaseConfig = {
+        apiKey: "AIzaSyC3Vuf4ma6wKrrphF7tbmd2ih0Qr28w2sM",
+        authDomain: "gojim-26cbc.firebaseapp.com",
+        databaseURL: "https://gojim-26cbc-default-rtdb.firebaseio.com",
+        projectId: "gojim-26cbc",
+        storageBucket: "gojim-26cbc.appspot.com",
+        messagingSenderId: "491730952662",
+        appId: "1:491730952662:web:2f430530eef2e0ebfbc477",
+        measurementId: "G-C5KT1RZJYS"
+      };
+      
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app);
+      
+      const search = document.getElementById("search");
+      const searchUser = document.getElementById("searchUser");
+      const userList = document.getElementById("users");
+      
+      search.addEventListener("click", () => {
+        const searchEmail = searchUser.value;
+        if (searchEmail !== "") {
+          onValue(ref(database, "users"), (snapshot) => {
+            const users = snapshot.val();
+            let results = "";
+            for (const userId in users) {
+              const userEmail = users[userId].email;
+              if (userEmail.includes(searchEmail)) {
+                results += `<li>${userEmail}</li>`;
+              }
+            }
+            userList.innerHTML = results
+          });
+        }
+      });
+    </script>
