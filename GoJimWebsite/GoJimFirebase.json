@@ -1,0 +1,15 @@
+{
+  "users": {
+    "WPiMao3qhAaDZ5SuGduDFUXoFjv2": {
+      "email": "jc4653@drexel.edu",
+      "last_login": "2023-04-09T17:51:56.364Z",
+      "password": "test123"
+    },
+    "mFC9tITs3SMlEPoo8gOhs1jDpZk1": {
+      "date": 1681062669280,
+      "email": "fake221@gmail.com",
+      "password": "test123",
+      "username": "testuser2"
+    }
+  }
+}
