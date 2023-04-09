@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forum</title>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        .thread {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .thread-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+    <script type="module">
+        // Import Firebase modules
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js';
+        import { getDatabase, ref, onValue, push, serverTimestamp } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js';
+        
+        const firebaseConfig = {
+        apiKey: "AIzaSyC3Vuf4ma6wKrrphF7tbmd2ih0Qr28w2sM",
+        authDomain: "gojim-26cbc.firebaseapp.com",
+        projectId: "gojim-26cbc",
+        storageBucket: "gojim-26cbc.appspot.com",
+        messagingSenderId: "491730952662",
+        appId: "1:491730952662:web:2f430530eef2e0ebfbc477",
+        measurementId: "G-C5KT1RZJYS"
+        };
+
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        window.submitForm = async function(event) {
+            event.preventDefault();
+
+            const threadTitle = document.getElementById("thread_title").value;
+            const threadMessage = document.getElementById("thread_message").value;
+
+            try {
+                await push(ref(db, "threads/"), {
+                    title: threadTitle,
+                    message: threadMessage,
+                    timestamp: serverTimestamp()
+                });
+                alert("Thread created");
+                document.getElementById("createThreadForm").reset();
+            } catch (error) {
+                alert("Error: " + error.message);
+            }
+        };
+
+        function displayThreads(snapshot) {
+            const threadsContainer = document.getElementById("threads-container");
+            threadsContainer.innerHTML = "";
+
+            snapshot.forEach((childSnapshot) => {
+                const thread = childSnapshot.val();
+                const threadElement = `
+                    <div class="thread">
+                        <div class="thread-title">${thread.title}</div>
+                        <div class="thread-message">${thread.message}</div>
+                    </div>
+                `;
+                threadsContainer.innerHTML += threadElement;
+            });
+        }
+
+        onValue(ref(db, "threads/"), displayThreads);
+    </script>
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About</a></li>
+          <li><a href="socialmedia.html">Socials</a></li>
+          <li><a href="tipspage.html">Tips</a></li>
+          <li><a href="Calc.html">Calculators</a></li>
+          <li><a href="gymgallery.html">Gallery</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
+          <li><a href="goals.html">Set Goals</a></li>
+          <li><a href="createAccount.html">Create an Account</a></li>
+          <li><a href="calorieTracker.html">Calorie Tracker</a>
+          
+        </ul>
+      </nav>
+
+    <div class="container">
+        <h1>Create Thread</h1>
+        <form id="createThreadForm" onsubmit="submitForm(event)">
+            <label for="thread_title"></label>
+            <input type="text" id="thread_title" name="thread_title" placeholder="Title" required>
+            <br><br>
+            <textarea id="thread_message" name="thread_message" rows="10" cols="50" placeholder="Message" required></textarea>
+            <br><br>
+            <input type="submit" value="Create Thread">
+        </form>
+        <h2>Threads</h2>
+        <div id="threads-container"></div>
+    </div>
+</body>
+</html>
