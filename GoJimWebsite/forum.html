@@ -16,11 +16,19 @@
             font-size: 20px;
             font-weight: bold;
         }
+        .upvote, .downvote {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .upvote:hover, .downvote:hover {
+            color: blue;
+        }
     </style>
     <script type="module">
-        // Import Firebase modules
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js';
-        import { getDatabase, ref, onValue, push, serverTimestamp } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js';
+        import { getDatabase, ref, onValue, push, serverTimestamp } from'https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js';
         
         const firebaseConfig = {
         apiKey: "AIzaSyC3Vuf4ma6wKrrphF7tbmd2ih0Qr28w2sM",
@@ -46,6 +54,7 @@
                 await push(ref(db, "threads/"), {
                     title: threadTitle,
                     message: threadMessage,
+                    votes: 0,
                     timestamp: serverTimestamp()
                 });
                 alert("Thread created");
@@ -55,6 +64,11 @@
             }
         };
 
+
+
+
+
+      
         function displayThreads(snapshot) {
             const threadsContainer = document.getElementById("threads-container");
             threadsContainer.innerHTML = "";
@@ -65,11 +79,16 @@
                     <div class="thread">
                         <div class="thread-title">${thread.title}</div>
                         <div class="thread-message">${thread.message}</div>
+                        <div class="upvote">⬆️</div>
+                        <div class="downvote">⬇️</div>
+                        <div class="vote">${thread.votes}</div>
+
                     </div>
                 `;
                 threadsContainer.innerHTML += threadElement;
             });
         }
+
 
         onValue(ref(db, "threads/"), displayThreads);
     </script>
@@ -85,14 +104,14 @@
           <li><a href="gymgallery.html">Gallery</a></li>
           <li><a href="contactus.html">Contact Us</a></li>
           <li><a href="goals.html">Set Goals</a></li>
-          <li><a href="createAccount.html">Create an Account</a></li>
+         <li><a href="createAccount.html">Create an Account</a></li>
           <li><a href="calorieTracker.html">Calorie Tracker</a>
           
         </ul>
       </nav>
 
     <div class="container">
-        <h1>Create Thread</h1>
+        <h2>Create Thread</h2>
         <form id="createThreadForm" onsubmit="submitForm(event)">
             <label for="thread_title"></label>
             <input type="text" id="thread_title" name="thread_title" placeholder="Title" required>
