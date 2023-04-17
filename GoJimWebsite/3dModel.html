@@ -2,17 +2,21 @@
 <html>
   <head>
     <meta charset=UTF-8 />
-    <link rel="stylesheet" type="text/css" href="3dModel.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
     <script src="three.min.js"></script>
     <script src="GLTFLoader.js"></script>
     <script src="OrbitControls.js"></script>
     <script>
-      let scene, camera, renderer;
+    import * as THREE from 'three';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+    import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-      function init() {
+    let scene, camera, renderer;
 
+    function init() {
+        
         scene = new THREE.Scene();
         scene.background = new THREE.Color(0xdddddd);
 
@@ -49,8 +53,14 @@
         renderer.setSize(window.innerWidth,window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
-        //IMPORT 3D MODEL HERE
-      
+        // Import 3DModel here
+        let loader = new THREE.GLTFLoader();
+        loader.load('male.glb', function(gltf){
+          model = gltf.scene.children[0];
+          model.scale.set(0.5,0.5,0.5);
+          scene.add(glb.scene);
+          animate();
+        });
       }
       function animate() {
         renderer.render(scene,camera);
