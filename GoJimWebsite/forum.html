@@ -3,7 +3,7 @@
 <head>
     <title>Forum</title>
    
-
+    <!-- Styling for the forum page -->
     <style>
         .container {
             max-width: 800px;
@@ -28,11 +28,14 @@
             color: blue;
         }
     </style>
+    
+    <!-- Importing necessary Firebase modules and initializing the app and database objects -->
     <script type="module">
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js';
-        import { getDatabase, ref, onValue, push, serverTimestamp } from'https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js';
+        import { getDatabase, ref, onValue, push, serverTimestamp } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js';
         
         const firebaseConfig = {
+        // Firebase project configuration details
         apiKey: "AIzaSyC3Vuf4ma6wKrrphF7tbmd2ih0Qr28w2sM",
         authDomain: "gojim-26cbc.firebaseapp.com",
         projectId: "gojim-26cbc",
@@ -47,26 +50,28 @@
         const db = getDatabase(app);
 
 
+        // Setting up event listeners for the increment and decrement buttons
         const incrementButton = document.getElementById("increment-button");
         const decrementButton = document.getElementById("decrement-button");
         const counterDisplay = document.getElementById("counter-value");
 
+        // Function to submit a form to create a new thread in the database
         window.submitForm = async function(event) {
             event.preventDefault();
 
+            // Getting the thread title and message from the form
             const threadTitle = document.getElementById("thread_title").value;
             const threadMessage = document.getElementById("thread_message").value;
 
-
-             
+            // Pushing the thread data to the database
             try {
-
                 await push(ref(db, "threads/"), {
                     title: threadTitle,
                     message: threadMessage,
                     timestamp: serverTimestamp()
                 });
                 alert("Thread created");
+                // Resetting the form after submission
                 document.getElementById("createThreadForm").reset();
             } catch (error) {
                 alert("Error: " + error.message);
@@ -74,100 +79,73 @@
         };
 
 
-      
-               
+        // Function to display threads from the database in the HTML page
         function displayThreads(snapshot) {
             const threadsContainer = document.getElementById("threads-container");
             threadsContainer.innerHTML = "";
 
+            // Looping through all the threads in the database and creating HTML elements to display them
             snapshot.forEach((childSnapshot) => {
                 const thread = childSnapshot.val();
-               
-                             
-               const threadElement = `
-    <div class="thread-container">
-    <button id="increment-button">+</button>
-    <p id="counter-value">0</p>
-    <button id="decrement-button">-</button>
-      
 
-        
-        <div class="thread">
-            <div class="thread-title">${thread.title}</div>
-            <div class="thread-message">${thread.message}</div>
-            
-        </div>
-    </div>
-`;
+                // Creating HTML elements for each thread
+                const threadElement = `
+                    <div class="thread-container">
+                        <!-- Buttons to upvote and downvote the thread -->
+                        <button id="increment-button">+</button>
+                        <p id="counter-value">0</p>
+                        <button id="decrement-button">-</button>
 
+                        <div class="thread">
+                            <div class="thread-title">${thread.title}</div>
+                            <div class="thread-message">${thread.message}</div>
+                        </div>
+                    </div>
+                `;
 
-                
+                // Appending the thread HTML elements to the threads container in the HTML page
                 threadsContainer.innerHTML += threadElement;
             });
         }
 
+        // Setting up event listener for changes in the threads in the database
+        // This function listens for changes in the threads and calls the displayThreads function when there is a change
         onValue(ref(db, "threads/"), displayThreads);
     </script>
-  
 </head>
 <body>
-  
+    <!-- Navigation bar for the website -->
     <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="aboutus.html">About</a></li>
-          <li><a href="socialmedia.html">Socials</a></li>
-          <li><a href="tipspage.html">Tips</a></li>
-          <li><a href="Calc.html">Calculators</a></li>
-          <li><a href="gymgallery.html">Gallery</a></li>
-          <li><a href="contactus.html">Contact Us</a></li>
-          <li><a href="goals.html">Set Goals</a></li>
-         <li><a href="createAccount.html">Create an Account</a></li>
-          <li><a href="calorieTracker.html">Calorie Tracker</a>
-          
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About</a></li>
+            <li><a href="socialmedia.html">Socials</a></li>
+            <li><a href="tipspage.html">Tips</a></li>
+            <li><a href="Calc.html">Calculators</a></li>
+            <li><a href="gymgallery.html">Gallery</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="goals.html">Set Goals</a></li>
+            <li><a href="createAccount.html">Create an Account</a></li>
+            <li><a href="calorieTracker.html">Calorie Tracker</a></li>
         </ul>
-      </nav>
+    </nav>
 
     <div class="container">
         <h2>Create Thread</h2>
+        <!-- Form to create a new thread -->
         <form id="createThreadForm" onsubmit="submitForm(event)">
-            <label for="thread_title"></label>
+            <label for="thread_title">Title:</label>
             <input type="text" id="thread_title" name="thread_title" placeholder="Title" required>
             <br><br>
+            <label for="thread_message">Message:</label>
             <textarea id="thread_message" name="thread_message" rows="10" cols="50" placeholder="Message" required></textarea>
             <br><br>
             <input type="submit" value="Create Thread">
         </form>
+
         <h2>Threads</h2>
+        <!-- Container to display existing threads -->
         <div id="threads-container"></div>
-    
-      
     </div>
 </body>
 </html>
-
-
-<p id="counter-value">0</p>
-<button id="increment-button">+</button>
-<button id="decrement-button">-</button>
-let counter = 0;
-
-      incrementButton.addEventListener("click", () => {
-        counter++;
-      counterDisplay.innerText = counter;
-      });
-
-      decrementButton.addEventListener("click", () => {
-        counter--;
-        counterDisplay.innerText = counter;
-      });
-
-
-
-
-
-
-
-
-
-
