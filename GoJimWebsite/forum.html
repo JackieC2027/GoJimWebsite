@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Forum</title>
+   
+
     <style>
         .container {
             max-width: 800px;
@@ -44,17 +46,24 @@
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
 
+
+        const incrementButton = document.getElementById("increment-button");
+        const decrementButton = document.getElementById("decrement-button");
+        const counterDisplay = document.getElementById("counter-value");
+
         window.submitForm = async function(event) {
             event.preventDefault();
 
             const threadTitle = document.getElementById("thread_title").value;
             const threadMessage = document.getElementById("thread_message").value;
 
+
+             
             try {
+
                 await push(ref(db, "threads/"), {
                     title: threadTitle,
                     message: threadMessage,
-                    votes: 0,
                     timestamp: serverTimestamp()
                 });
                 alert("Thread created");
@@ -65,35 +74,44 @@
         };
 
 
-
-
-
       
+               
         function displayThreads(snapshot) {
             const threadsContainer = document.getElementById("threads-container");
             threadsContainer.innerHTML = "";
 
             snapshot.forEach((childSnapshot) => {
                 const thread = childSnapshot.val();
-                const threadElement = `
-                    <div class="thread">
-                        <div class="thread-title">${thread.title}</div>
-                        <div class="thread-message">${thread.message}</div>
-                        <div class="upvote">⬆️</div>
-                        <div class="downvote">⬇️</div>
-                        <div class="vote">${thread.votes}</div>
+               
+                             
+               const threadElement = `
+    <div class="thread-container">
+    <button id="increment-button">+</button>
+    <p id="counter-value">0</p>
+    <button id="decrement-button">-</button>
+      
 
-                    </div>
-                `;
+        
+        <div class="thread">
+            <div class="thread-title">${thread.title}</div>
+            <div class="thread-message">${thread.message}</div>
+            
+        </div>
+    </div>
+`;
+
+
+                
                 threadsContainer.innerHTML += threadElement;
             });
         }
 
-
         onValue(ref(db, "threads/"), displayThreads);
     </script>
+  
 </head>
 <body>
+  
     <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -122,6 +140,34 @@
         </form>
         <h2>Threads</h2>
         <div id="threads-container"></div>
+    
+      
     </div>
 </body>
 </html>
+
+
+<p id="counter-value">0</p>
+<button id="increment-button">+</button>
+<button id="decrement-button">-</button>
+let counter = 0;
+
+      incrementButton.addEventListener("click", () => {
+        counter++;
+      counterDisplay.innerText = counter;
+      });
+
+      decrementButton.addEventListener("click", () => {
+        counter--;
+        counterDisplay.innerText = counter;
+      });
+
+
+
+
+
+
+
+
+
+
