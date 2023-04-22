@@ -1,0 +1,63 @@
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  
+  
+}
+img {
+  width: 50%;
+  padding-left: 25%;
+  padding-top: 5%;
+  
+}
+
+.column {
+  float: left;
+  background: #C03535;
+  height: 180px;
+}
+
+.copy {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: medium;
+  text-align: center;
+  font-size: 10px;
+  color: white;
+  text-decoration: none;
+  
+}
+.column a, p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  
+}
+
+.left {
+  width: 33.333333333333333333%;
+  
+}
+
+.middle {
+  width: 33.333333333333333333%;
+
+}
+
+.right {
+  width: 33.333333333333333333%;
+  
+}
