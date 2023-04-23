@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <style>
+            <title>Personalized Page</title>
+          </head>
+          <body>
+          <nav>
+          <ul>
+          <li><a href="#threads">Threads</a></li>
+          <li><a href="#likes">Likes</a></li>
+          <li><a href="#comments">Comments</a></li>
+        </ul>
+        </nav>
+            <h1>Welcome, at3499@drexel.edu!</h1>
+            <h2>Profile Picture</h2>
+    <button>Upload</button>
+     <h2>Background Color</h2>
+      <input type="range" min="0" max="255" value="128" class="slider" id="bgSlider">
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.getElementById("bgSlider");
+  slider.addEventListener("input", () => {
+    const value = slider.value;
+    const hexValue = value.toString(16).padStart(2, '0').toUpperCase();
+    document.body.style.backgroundColor = `#${hexValue}${hexValue}${hexValue}`;
+});
+    const uploadButton = document.getElementById("uploadButton");
+  const profilePicInput = document.getElementById("profilePicInput");
+
+  uploadButton.addEventListener("click", () => {
+    const file = profilePicInput.files[0];
+    const reader = new FileReader();
+    
+    reader.onload = (event) => {
+      const imageData = event.target.result;
+      const profilePic = document.getElementById("profilePic");
+      profilePic.setAttribute("src", imageData);
+    };
+    
+    reader.readAsDataURL(file);
+  });
+});
+    </script>
+        </body>
+        </html>
