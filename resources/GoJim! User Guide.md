@@ -2,8 +2,6 @@
 
 <p>The document explains how to get started with GoJim! GoJim! is designed to provide affordable access to fitness-tracking instruments and dietary suggestions for all gymgoers, regardless of their expertise, in hopes to encourage the development of a healthier lifestyle. All of our resources to start GoJim! are free of charge.<p>
 
-<br></br>
-
 <h2>Overview</h2>
 
 <h2>Steps:</h2>
@@ -30,4 +28,4 @@
 <h3 id="step3">Step 3: Enjoy browsing the website!</h3>
 <ul>
 <li>Upon creating a local server for local deployment, this should be the home page for our website!</li>
-<img src=">
+<img src="frontpage.png">
