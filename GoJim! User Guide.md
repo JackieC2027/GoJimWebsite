@@ -113,7 +113,7 @@
 <img src="profileimg.PNG">
 </ol>
 
-<h3>Calorie Tracker - Users should be able to create a list of calories for the food that they are consuming to acknowledge if they are properly following their dietary goal.<h3>
+<h3>Calorie Tracker - Users should be able to create a list of calories for the food that they are consuming to acknowledge if they are properly following their dietary goal.</h3>
 <img src="calor.PNG">
 <ol>
 <li>Click on the "Calorie Tracker" on our navigation bar to access our feature.</li>
@@ -142,7 +142,7 @@
 <img src="contact.PNG">
 
 <ol>
-<li>Click the "Contact Us" tab on our navigation bar to contact our developers.<li>
+<li>Click the "Contact Us" tab on our navigation bar to contact our developers.</li>
 <li>Upon clicking this tab, the intended page should look like this:</li>
 <img src="contactfront.PNG">
 <li>You can type in the corresponding name, email, phone, subject, and message into the text boxes to send an email to our developer team.</li>
