@@ -80,7 +80,7 @@ This error occurs because of Firebase's authentication system. As a result of ou
 
 <li>Given that the user entered a password that does not match with the corresponding email, this error will appear: 
 
-<img src="right_email_wrong_password.PNG">
+<img src="right_email__wrong_password.PNG">
 
 This error occurs because of Firebase's authentication system. As a result of our database configuration, all passwords are associated with a unique userID. The database verifies that the email does not exist within our database and moves onto the next conditional in the script. Next, the database will reference the node of 'password' and compare the syntax of the stored password and the password entered by the user. In this case, the passwords were not matching and the authentication process failed. To address this technical issue, the user should attempt to verify the capitalization, letter and number placement, and dates of their passwords to ensure that the entered password was the password associated with the creation of their account.</li>
 </ul>
