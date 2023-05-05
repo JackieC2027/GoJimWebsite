@@ -33,7 +33,8 @@
 <li>PHP: PHP is a server-side scripting language used for web development. Refer to this link to integrate PHP Web Server for our webiste, <a href="https://replit.com/new/php7">PHP Web Server Link</a></li>
 <li>Node.js is a JavaScript runtime that allows you to run JavaScript on the server side. Refer to this link to download Node.js on your local machine for our website, <a href="https://nodejs.org/en/download">Node.js Official Website</a></li>
 <li>Firebase SDK: Firebase SDK incorporates all of the enssacy tools and libraries to access our website. Refer to this link to view Firebase documentation, <a href="https://firebase.google.com/docs">Firebase SDK</a></li>
-<ul>
+</ul>
+
 
 <h2 id="install">Installation Guide</h2>
 
@@ -147,6 +148,3 @@ This error occurs because of JavaScript's default response for division by 0. Ac
 <li>Discord: hoat#2188</li>
 <li>Meeting Location: 3675 Market Street Room 910-911 1-2:50pm</li>
 </ul>
-
-
-
