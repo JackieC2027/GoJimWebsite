@@ -118,3 +118,35 @@ This error occurs because of the default JavaScript alerting system for improper
 
 This error occurs because of JavaScript's default response for division by 0. According to JavaScript's arthimetic operations, integers cannot be divded as 0, as this leads to sign-analysis between negative infinity and positive infinity. In this case, the weight of the user was valid, but the insertion of 0 cm will cause this error, as 100/0 would go toward positive infinity, given that the computation was evaulated at the limit of n approaching infinity. To avoid this error, the user should make sure that they are entering a valid height, where the values of heights are greater than 0.</li>
 
+<h2>Contact Information</h2>
+
+<p>Feel free to reach out to our developers for additional inqurieis or any undocumented errors arise.<p>
+
+<h3>Meet our developers!</h3>
+
+<ul>Jackie Cheng
+<li>Email: jc4653@drexel.edu</li>
+<li>Discord: Vague#2592</li>
+<li>Meeting Location: 3675 Market Street Room 910-911 1-2:50pm</li>
+</ul>
+
+<ul>Lorenz Aparentado
+<li>Email: lea54@drexel.edu</li>
+<li>Discord: PigeonMan#1460</li>
+<li>Meeting Location: 3675 Market Street Room 910-911 1-2:50pm</li>
+</ul>
+
+<ul>Richmond Nguyen
+<li>Email: rhn29@drexel.edu</li>
+<li>Discord: Kidk#6640</li>
+<li>Meeting Location: 3675 Market Street Room 910-911 1-2:50pm</li>
+</ul>
+
+<ul>Amaro Truong
+<li>Email: at3499@drexel.edu</li>
+<li>Discord: hoat#2188</li>
+<li>Meeting Location: 3675 Market Street Room 910-911 1-2:50pm</li>
+</ul>
+
+
+
