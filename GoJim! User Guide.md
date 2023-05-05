@@ -1,6 +1,6 @@
 <h1>GoJim! User Guide </h1>
 
-<p>The document explains how to get started with GoJim! GoJim! is designed to provide affordable access to fitness-tracking instruments and dietary suggestions for all gymgoers, regardless of their expertise, in hopes to encourage the development of a healthier lifestyle. All of our resources to start GoJim! are free of charge.<p>
+<p>This document explains how to get started with GoJim! GoJim! is designed to provide affordable access to fitness-tracking instruments and dietary suggestions for all gymgoers, regardless of their expertise, in hopes to encourage the development of a healthier lifestyle. All of our resources to start GoJim! are free of charge.<p>
 
 <h2>Overview</h2>
 
