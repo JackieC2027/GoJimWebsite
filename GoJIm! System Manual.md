@@ -41,7 +41,7 @@
 <h3>Prequisites</h3>
 <p>Before using our website, make sure you have the following:
 <ul>
-<li>A Replit account: If you have not made one yet, go to Replit's official website to create one: <a href="https://replit.com/~>Replit Sign-Up</a></li>
+<li>A Replit account: If you have not made one yet, go to Replit's official website to create one: <a href="https://replit.com/~">Replit Sign-Up</a></li>
 <li>All of the necessary software and hardware requirements</li>
 </ul>
 
