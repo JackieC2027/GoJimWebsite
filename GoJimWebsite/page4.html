@@ -24,3 +24,25 @@
     <br></br>
 </body>
 </html>
+<script>
+  const speakButton = document.getElementById('speak-btn'); //Gets value of clicking the 'Text to Speech' button
+        let isSpeaking = false; //tracks progress of speech generator
+  
+        speakButton.addEventListener('click', () => { //When the 'Text to Speech' is clicked
+          const textToSpeak = document.getElementById('read').innerText; //Value that will be said within the p tag
+          if (isSpeaking) { //Speech synthesis is ongoing
+            window.speechSynthesis.cancel(); //stops the text to speech
+            speakButton.innerText = 'Text to Speech'; //changes the title of the button back to 'Text to Speech'
+            isSpeaking = false; //Allows the user to restart the text
+          } else {
+            const utterance = new SpeechSynthesisUtterance(textToSpeak); //OOP to use inherent method to speak the given text
+            window.speechSynthesis.speak(utterance);
+            speakButton.innerText = 'Stop Speech'; //Changes the 'Text to Speech' value to 'Stop Speech'
+            isSpeaking = true; //Speech is in progress
+            utterance.addEventListener('end', () => {
+              speakButton.innerText = 'Text to Speech'; //Changes the button again
+              isSpeaking = false;
+            });
+          }
+        });
+      </script>
