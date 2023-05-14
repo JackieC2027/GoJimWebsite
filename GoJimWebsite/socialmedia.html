@@ -7,98 +7,128 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="socialmedia.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
   </head>
-   <header>
-      <div class="header">
-  <img href="index.html" src="logo.png">
-  <div class="header-left">
-    <nav>
-    <a >Home</a>
-    <a href="aboutus.html">About</a>
-    <a href="socialmedia.html">Socials</a>
-    <a href="tipspage.html">Tips</a>
-    <a href="Calc.html">Calculators</a>
-    <a href="gymgallery.html">Gallery</a>
-    <a href="goals.html">Set Goals</a>
-    <a href="calorieTracker.html">Calorie Tracker</a>
-    <a href="forum.html"> Forum</a>
-    </nav>
-  </div>
-  <div class="header-right">
-    <a href="createAccount.html">Login</a>
-    <a href="contactus.html">Contact Us</a>
-  </div>
-</div>
-    </header>
   <body>
+    <header>
+      <div class="header">
+        <img href="index.html" src="logo.png">
+        <div class="header-left">
+          <nav>
+            <a href="index.html">Home</a>
+            <a href="aboutus.html">About</a>
+            <a href="socialmedia.html">Socials</a>
+            <a href="tipspage.html">Tips</a>
+            <a href="Calc.html">Calculators</a>
+            <a href="gymgallery.html">Gallery</a>
+            <a href="goals.html">Set Goals</a>
+            <a href="calorieTracker.html">Calorie Tracker</a>
+            <a href="forum.html"> Forum</a>          </nav>
+        </div>
+        <div class="header-right">
+          <a href="createAccount.html">Login</a>
+          <a href="contactus.html">Contact Us</a>
+        </div>
+      </div>
+    </header>
+
     <h1>Meet other gymgoers!</h1>
+    <label for="searchUser">Users:</label>
     <input type="text" id="searchUser" name="searchforusers">
-    <button type="button"id="search" name="search">Search</button>
-    
+    <p></p>
+    <button type="button" id="search" name="search">Search</button>
+    <p></p>
+    <img src="Socials Gojim.png">
     <ul id="users"></ul>
-    </body>
-  <footer class="footer">
-  <div class="column left">
-    <img src="logo.png">
-    <p>Sweat today for a better tomorrow, GoJim!</p>
-  </div>
-  <div class="column middle">
-    <p>Links:</p>
-      <a href="index.html">Home</a>
-      <a href="aboutus.html">About</a>
-      <a href="tipspage.html">Tips</a>
-      <a href="Calc.html">Calculators</a>
-      <a href="gymgallery.html">Gallery</a>
-      <a href="goals.html">Set Goals</a>
-    
-  </div>
-  <div class="column right">
-    <p>Contacts:</p>
-    <a href="contact.html">Contact Us</a>
-    <div class="copy">
-    <p>© Copyright 2022 - This is an academic project and NOT a real company.</p>
-    </div>
-  </div>
-  </div>
-</footer>
-</html>
-<script type="module">
-    import {initializeApp} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-    import {getDatabase, ref, onValue} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
-    const firebaseConfig = {
-        apiKey: "AIzaSyC3Vuf4ma6wKrrphF7tbmd2ih0Qr28w2sM",
-        authDomain: "gojim-26cbc.firebaseapp.com",
-        databaseURL: "https://gojim-26cbc-default-rtdb.firebaseio.com",
-        projectId: "gojim-26cbc",
-        storageBucket: "gojim-26cbc.appspot.com",
-        messagingSenderId: "491730952662",
-        appId: "1:491730952662:web:2f430530eef2e0ebfbc477",
-        measurementId: "G-C5KT1RZJYS"
+
+    <footer class="footer">
+      <div class="column left">
+        <img src="logo.png">
+        <p>Sweat today for a better tomorrow, GoJim!</p>
+      </div>
+      <div class="column middle">
+        <p>Links:</p>
+          <a href="index.html">Home</a>
+          <a href="aboutus.html">About</a>
+          <a href="tipspage.html">Tips</a>
+          <a href="Calc.html">Calculators</a>
+          <a href="gymgallery.html">Gallery</a>
+          <a href="goals.html">Set Goals</a>
+        
+      </div>
+      <div class="column right">
+        <p>Contacts:</p>
+        <a href="contact.html">Contact Us</a>
+        <div class="copy">
+        <p>© Copyright 2022 - This is an academic project and NOT a real company.</p>
+        </div>
+      </div>
+      </div>
+    </footer>
+
+    <script type="module">
+      import {initializeApp} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+      import {getDatabase, ref, onValue} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+      const firebaseConfig = {
+          apiKey: "AIzaSyC3Vuf4ma6wKrrphF7tbmd2ih0Qr28w2sM",
+          authDomain: "gojim-26cbc.firebaseapp.com",
+          databaseURL: "https://gojim-26cbc-default-rtdb.firebaseio.com",
+          projectId: "gojim-26cbc",
+          storageBucket: "gojim-26cbc.appspot.com",
+          messagingSenderId: "491730952662",
+          appId: "1:491730952662:web:2f430530eef2e0ebfbc477",
+          measurementId: "G-C5KT1RZJYS"
       };
-      
+
       const app = initializeApp(firebaseConfig);
       const database = getDatabase(app);
-      
+
       const search = document.getElementById("search");
       const searchUser = document.getElementById("searchUser");
       const userList = document.getElementById("users");
-  //User clicks the "Search Button"
-search.addEventListener("click", () => {
-  const searchEmail = searchUser.value;
-  if (searchEmail !== "") { //Given that the search email is in the database and not empty
-    onValue(ref(database, "users"), (snapshot) => {
-      //Changes to the user node in Firebase
-      const users = snapshot.val();
-      //Acquires read-only info of the retrieved users
-      let results = ""; //empty string for file creation
-      for (const userId in users) { //for a list of all users in our database
-        const userEmail = users[userId].email; //gets the email at each index of the list
-        if (userEmail.includes(searchEmail)) { //given that the email is the searched email
-        const userPageUrl = `${userId}.html`; //Creates the page with the custom userID
-          results += `<li><a href="${userPageUrl}">${userEmail}</a></li>`;
+
+
+      let usersData = [];
+// Retrieve user data from the database and enters usersData array
+      onValue(ref(database, "users"), (snapshot) => {
+        const users = snapshot.val();
+        for (const userId in users) {
+          usersData.push(users[userId].email);
         }
-      }
-      userList.innerHTML = results;
-    });
-  }
-});
+      });
+// Set up autocomplete 
+      $(searchUser).autocomplete({
+        source: usersData,
+        select:
+        function (event, ui) {
+          searchUser.value = ui.item.value;
+        }
+      });
+
+      //User clicks the "Search Button"
+      search.addEventListener("click", () => {
+        const searchEmail = searchUser.value;
+        if (searchEmail !== "") { //Given that the search email is in the database and not empty
+          onValue(ref(database, "users"), (snapshot) => {
+            //Changes to the user node in Firebase
+            const users = snapshot.val();
+            //Acquires read-only info of the retrieved users
+            let results = ""; //empty string for file creation
+            for (const userId in users) { //for a list of all users in our database
+              const userEmail = users[userId].email; //gets the email at each index of the list
+              if (userEmail.includes(searchEmail)) { //given that the email is the searched email
+                const userPageUrl = `${userId}.html`; //Creates the page with the custom userID
+                results += `<li><a href="${userPageUrl}">${userEmail}</a></li>`;
+              }
+            }
+            userList.innerHTML = results;
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
+
