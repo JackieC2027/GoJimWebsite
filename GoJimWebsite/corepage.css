@@ -3,6 +3,26 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.image-container {
+border: 1px solid black;
+text-align: center;
+}
+
+.item {
+padding: 20px;
+}
+
+.image {
+max-width: 100%;
+height: auto;
+}
+
 p {
   color: white;
   font-family: 'Montserrat', sans-serif;
