@@ -16,6 +16,31 @@ Before using our website, make sure you have the following:
 3. Once the project is downloaded, type "cd GoJimwWebsite" to access our repository from the Terminal.
 4. Using Git commands, you can edit, navigate, and use all of the necessary files, pages, documentation, and templates that were created by our developers.
 
+## Changing the Codebase on GitLab
+1. Clone the repository
+- Use "git clone <repository>"
+
+2. Create a New Branch
+- Use "cd <repository>"
+- Then "git branch <branchName>"
+- Finally, "git checkout <branchName>"
+
+3. Make Changes
+
+4. Commit and Push Changes
+- First, "git add ."
+- Next, "git commit -m "Short description of changes made"
+- Finally, "git push origin <branchName>"
+
+5. Create a Merge Request
+- Click on "Merge Requests" tab
+- Click on the "New merge request" button
+- Select branch
+- Write short description of merge request
+- Click on "Submit merge request" to create the request
+
+6. Review and Merge
+
 ## Usage
 Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
