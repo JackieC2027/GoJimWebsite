@@ -41,17 +41,34 @@ Before using our website, make sure you have the following:
 
 6. Review and Merge
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+## Dependencies and Integrations
+1. Dependencies
+- Three.js: A Javascript library for making 3D models.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+2. Integrations 
+- Firebase Authentication: User authentication is handled through Firebase Authentication. Users can sign up, log in, and manage their accounts using Firebase services. Refer to the documentation for setting up Firebase and configuring authentication methods.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+## Deployment
+1. Hosting Platform
+- Heroku
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+2. Configuration
+- Configuring environment variables for sensitive information (e.g., API keys, database credentials)
+- Specifying the deployment target (e.g., production, staging)
+- Configuring custom domains or SSL certificates, if applicable
 
-## License
-For open source projects, say how it is licensed.
+3. Build and Deployment Process
+
+4. Deployment Instructions
+- Log in to your Heroku account and create a new app.
+- Connect your app to your Gitlab repository.
+- Configure the deployment options (e.g., automatic deployments on every push).
+- Trigger a manual deployment or wait for the automated deployment process to start.
+
+## Testing
+1. User Interface (UI) Testing
+Manual testing: Test the website manually by interacting with different features, forms, buttons, and links. Pay attention to responsiveness, layout, and usability across different devices and browsers.
+Automated testing: Use tools like Selenium to automate UI testing. Write test scripts to simulate user actions and verify expected outcomes.
+2. Integration testing:
+- Checking the integration between front-end and back-end components
+- Testing database connections and data retrieval
