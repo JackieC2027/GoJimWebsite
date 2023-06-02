@@ -69,6 +69,7 @@ Before using our website, make sure you have the following:
 1. User Interface (UI) Testing
 Manual testing: Test the website manually by interacting with different features, forms, buttons, and links. Pay attention to responsiveness, layout, and usability across different devices and browsers.
 Automated testing: Use tools like Selenium to automate UI testing. Write test scripts to simulate user actions and verify expected outcomes.
+
 2. Integration testing:
 - Checking the integration between front-end and back-end components
 - Testing database connections and data retrieval
