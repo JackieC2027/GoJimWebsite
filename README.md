@@ -45,7 +45,7 @@ Before using our website, make sure you have the following:
 2. Integrations 
 - Firebase Authentication: User authentication is handled through Firebase Authentication. Users can sign up, log in, and manage their accounts using Firebase services. Refer to the documentation for setting up Firebase and configuring authentication methods.
 
-##Deployment Instructions for Heroku:
+## Deployment Instructions for Heroku:
 
 1. Log in to your Heroku account: If you don't have an account, sign up at https://www.heroku.com/ and create a new account.
 
