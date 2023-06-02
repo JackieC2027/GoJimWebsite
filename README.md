@@ -45,22 +45,25 @@ Before using our website, make sure you have the following:
 2. Integrations 
 - Firebase Authentication: User authentication is handled through Firebase Authentication. Users can sign up, log in, and manage their accounts using Firebase services. Refer to the documentation for setting up Firebase and configuring authentication methods.
 
-## Deployment
-1. Hosting Platform
-- Heroku
+##Deployment Instructions for Heroku:
 
-2. Configuration
-- Configuring environment variables for sensitive information (e.g., API keys, database credentials)
-- Specifying the deployment target (e.g., production, staging)
-- Configuring custom domains or SSL certificates, if applicable
+1. Log in to your Heroku account: If you don't have an account, sign up at https://www.heroku.com/ and create a new account.
 
-3. Build and Deployment Process
+2. Create a new app: Once you're logged in, click on the "New" button and select "Create new app". Give your app a unique name and choose the appropriate region.
 
-4. Deployment Instructions
-- Log in to your Heroku account and create a new app.
-- Connect your app to your Gitlab repository.
-- Configure the deployment options (e.g., automatic deployments on every push).
-- Trigger a manual deployment or wait for the automated deployment process to start.
+3. Connect your app to your Git repository: In the "Deployment" tab of your app's dashboard, under "Deployment method", choose "Git" or "GitLab" (depending on the integration availability). Follow the instructions to connect your Git repository to your Heroku app.
+
+4. Configure deployment options: Once your Git repository is connected, you can configure the deployment options. Specify the deployment target, such as production or staging, by creating different branches or environments in your Git repository. Heroku will automatically deploy the respective branch/environment.
+
+5. Set up environment variables: In the "Settings" tab of your app's dashboard, under "Config Vars", you can specify environment variables for sensitive information like API keys or database credentials. Click on the "Reveal Config Vars" button and enter the variable name and its corresponding value.
+
+6. Configure custom domains or SSL certificates (if applicable): In the "Settings" tab, under "Domains and certificates", you can configure custom domains or add SSL certificates. Follow the instructions provided by Heroku to set up your custom domain or SSL certificate.
+
+7. Trigger manual deployment or enable automatic deployments: By default, Heroku can be configured to automatically deploy your app every time you push changes to your Git repository. However, you can also trigger a manual deployment by clicking the "Deploy" button in the "Deploy" tab of your app's dashboard.
+
+8. Monitor the deployment process: During the deployment process, you can monitor the logs and check the progress in the "Activity" tab of your app's dashboard. Any errors or issues encountered during deployment will be displayed here.
+
+9. Once the deployment process is complete, you should be able to access your app using the provided Heroku domain or your custom domain if configured.
 
 ## Testing
 1. User Interface (UI) Testing
