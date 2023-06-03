@@ -49,13 +49,6 @@ This software has the following dependencies:
 - CSS 
 - JavaScript 
 
-Please make sure to include the following scripts in your HTML file to include the required JavaScript dependencies:
-
-<script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/X.X.X/three.min.js"></script>
-
 2. Integrations
 This software integrates with the following services:
 
