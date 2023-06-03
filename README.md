@@ -50,7 +50,7 @@ This website has the following dependencies:
 - JavaScript 
 
 2. Integrations
-This software integrates with the following services:
+This website integrates with the following services:
 
 Firebase Authentication: This integration allows users to create accounts, log in, and access personalized features. You'll need to set up a Firebase project and configure the authentication service. Make sure to replace the firebaseConfig object in the provided code with your own Firebase project's configuration.
 
