@@ -40,10 +40,30 @@ Before using our website, make sure you have the following:
 
 ## Dependencies and Integrations
 1. Dependencies
-- Three.js: A Javascript library for making 3D models.
 
-2. Integrations 
-- Firebase Authentication: User authentication is handled through Firebase Authentication. Users can sign up, log in, and manage their accounts using Firebase services. Refer to the documentation for setting up Firebase and configuring authentication methods.
+This software has the following dependencies:
+
+- Firebase JavaScript SDK 
+- three.js 
+- HTML 
+- CSS 
+- JavaScript 
+
+Please make sure to include the following scripts in your HTML file to include the required JavaScript dependencies:
+
+<script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/X.X.X/three.min.js"></script>
+
+2. Integrations
+This software integrates with the following services:
+
+Firebase Authentication: This integration allows users to create accounts, log in, and access personalized features. You'll need to set up a Firebase project and configure the authentication service. Make sure to replace the firebaseConfig object in the provided code with your own Firebase project's configuration.
+
+Firebase Realtime Database: This integration enables data storage and retrieval. The code in the provided snippet interacts with the Firebase Realtime Database to retrieve user-specific information. Ensure that you have set up the database in your Firebase project and granted the necessary permissions.
+
+ForumSubmit: This integration enables the submission and management of forum posts. You'll need to include the necessary code and configure the backend for handling forum submissions. Ensure that the backend server for ForumSubmit is set up and functional. Consult the ForumSubmit documentation for details on how to integrate it with your project.
 
 ## Deployment Instructions for Heroku:
 
