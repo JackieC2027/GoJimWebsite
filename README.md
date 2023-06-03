@@ -41,7 +41,7 @@ Before using our website, make sure you have the following:
 ## Dependencies and Integrations
 1. Dependencies
 
-This software has the following dependencies:
+This website has the following dependencies:
 
 - Firebase JavaScript SDK 
 - three.js 
