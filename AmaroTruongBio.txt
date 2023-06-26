@@ -1,5 +1,0 @@
-Amaro Truong is a first year computer science major at Drexel University.
-He is seeking opportunities to learn and grow in the field of computer
-science and software engineering. He currently has experience with quality
-assurance, UI/UX, front-end development and is currently working with a
-team on a fitness tracking application.

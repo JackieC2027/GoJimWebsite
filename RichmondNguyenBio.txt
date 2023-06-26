@@ -1,6 +1,0 @@
-My name is Richmond Nguyen and I am a first-year student at Drexel who is 
-majoring in Software Engineering. Some of my current projects include 
-a stocks discord bot, a finance tracking webapp, and a personal portfolio 
-website. With my newfound knowledge, I hope to apply my programming skills and make 
-a positive difference in the world.
-
